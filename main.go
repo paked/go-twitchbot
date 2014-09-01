@@ -15,7 +15,7 @@ func main() {
 	flag.Parse()
 
 	irc := ircevent.IRC(*stream, *stream)
-
+	irc.Debug = true
 	irc.Password = *ircPassword
 
 	err := irc.Connect("irc.twitch.tv:6667")
@@ -33,10 +33,10 @@ func main() {
 	irc.AddCallback("JOIN",
 		func(e *ircevent.Event) {
 			log.Println("Connected: " + e.Raw)
-			irc.Privmsg("#"+*stream, "go away")
+			irc.Privmsg("#tehhcwool", "Hello")
 		})
 
-	irc.AddCallback("PRVMSG",
+	irc.AddCallback("GLOBALMSG",
 		func(e *ircevent.Event) {
 			log.Println("[ " + e.Nick + " ] " + e.Message())
 		})
