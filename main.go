@@ -10,7 +10,7 @@ var stream = flag.String("stream", "paked", "Your (or someone elses) streamname"
 var clientID = flag.String("clientID", "9po4ts2jz2niigqq3o9gtt2ntw69njf", "Your client ID (set in settings/connections)")
 
 var ircPassword = flag.String("password", "oauth:jerbrv285soc70ckkhr2qdqgal4bul1", "Twitch oauth password, get yours at http://twitchapps.com/tmi")
-var room = flag.String("chatroom", "", "The chat you want to listen in on")
+var room = flag.String("chatroom", "", "The chat you want to listen in on, leave blank if joining your own")
 var server = flag.String("ip", "irc.twitch.tv:6667", "IP")
 
 func main() {
