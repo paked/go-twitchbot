@@ -36,7 +36,7 @@ func main() {
 	})
 
 	irc.AddCallback("JOIN", func(e *ircevent.Event) {
-		log.Println("[{ME}] Listening to your chat")
+		log.Println("[{%v}] Joined the stream", e.Nick)
 	})
 
 	// Check each message to see if it contains a URL, and return the title
